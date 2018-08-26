@@ -10,15 +10,20 @@
         :key='item.id'>
         <img :src="item.images.small" class="list-img">
         <p class='movie-list-title'>{{ changeTitle(item.title) }}</p>
-        <div>{{ item.rating.average }}</div>
+        <rating-star :rating='item.rating'></rating-star>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import RatingStar from './RatingStar'
+
 export default {
   props: ['items', 'title'],
+  components: {
+    RatingStar
+  },
   methods: {
     changeTitle: function(title) {
       if(title.length > 6) {

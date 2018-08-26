@@ -1,32 +1,33 @@
 <template>
   <div class="movie-view">
-    <movie-list title="影院热映" name="in_theaters" :items="hotMovie"></movie-list>
-    <movie-list title="北美票房榜" name="us_box" :items="topMovie"></movie-list>
-    <movie-list title="新片速递" name="coming_soon" :items="newMovie"></movie-list>
+    <movie-list title="影院热映" :items="hotMovie"></movie-list>
+    <movie-list title="北美票房榜" :items="topMovie"></movie-list>
+    <movie-list title="新片速递" :items="newMovie"></movie-list>
+    <recommand title="发现好电影" :items="recommandTags"></recommand>
   </div>
 </template>
 
 <script>
 import MovieList from '../components/MovieList'
-import { mapState, mapActions } from 'vuex'
+import Recommand from '../components/Recommand'
+import { mapState } from 'vuex'
 
 export default {
   components: {
-    MovieList
+    MovieList, Recommand
   },
-  computed: mapState(['hotMovie', 'topMovie', 'newMovie']),
-  methods: {
-    ...mapActions([
-      'loadItem'
-    ])
-  },
+  computed: mapState({
+    hotMovie: state => state.movie.hotMovie,
+    topMovie: state => state.movie.topMovie,
+    newMovie: state => state.movie.newMovie,
+    recommandTags: state => state.color.recommandTags
+  }),
   created() {
-    this.loadItem()
+    this.$store.dispatch('movie/loadItem'),
+    this.$store.dispatch('getColor')
   }
 }
 </script>
 
 <style>
-.movie-view {
-}
 </style>

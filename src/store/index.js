@@ -4,6 +4,7 @@ import VueResource from 'vue-resource'
 
 import movie from './modules/movie'
 import color from './modules/color'
+import category from './modules/category'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
@@ -11,6 +12,7 @@ Vue.use(VueResource)
 export default new Vuex.Store({
   modules: {
     color,
-    movie
+    movie,
+    category
   }
 })

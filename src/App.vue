@@ -25,6 +25,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: '.';
+  visibility: hidden;
+  height: 0;
+}
 a {
   text-decoration: none;
   color: #494949;

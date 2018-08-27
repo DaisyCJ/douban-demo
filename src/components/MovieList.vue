@@ -11,7 +11,10 @@
         <router-link :to="{ name: 'SubjectView', params: {id: item.id}}">
           <img :src="item.images.small" class="list-img">
           <p class='movie-list-title'>{{ changeTitle(item.title) }}</p>
-          <rating-star :rating='item.rating'></rating-star>
+          <div>
+            <rating-star :rating='item.rating.average'></rating-star>
+            <span>{{ Number(item.rating.average).toFixed(1) }}</span>
+          </div>
         </router-link>
       </li>
     </ul>
@@ -68,6 +71,12 @@ export default {
         font-size: 15px;
         text-align: center;
       }
+      span {
+        font-size: 12px;
+      }
+    }
+    .rating-star {
+      float: left;
     }
   }
 }

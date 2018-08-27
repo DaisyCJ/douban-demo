@@ -26,6 +26,7 @@ export default {
 <style lang="scss" scoped>
 .recommand {
   padding-left: 20px;
+  padding-bottom: 10px;
   .list-head {
     display: inline;
     padding: 5px 0;

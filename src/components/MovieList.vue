@@ -8,9 +8,11 @@
       <li
         v-for='item in items'
         :key='item.id'>
-        <img :src="item.images.small" class="list-img">
-        <p class='movie-list-title'>{{ changeTitle(item.title) }}</p>
-        <rating-star :rating='item.rating'></rating-star>
+        <router-link :to="{ name: 'SubjectView', params: {id: item.id}}">
+          <img :src="item.images.small" class="list-img">
+          <p class='movie-list-title'>{{ changeTitle(item.title) }}</p>
+          <rating-star :rating='item.rating'></rating-star>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -41,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 .movie-list {
   padding-left: 20px;
+  padding-bottom: 10px;
   .list-head {
     display: inline;
     padding: 5px 0;

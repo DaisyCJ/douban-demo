@@ -12,7 +12,7 @@
         <li v-for="n in grayStar"
           class="normal-star"></li>
       </ul>
-      <span>{{ rating.average.toFixed(1) }}</span>
+      <span>{{ Number(rating.average).toFixed(1) }}</span>
     </div>
     <span v-else class="no-rating">暂无评分</span>
   </div>

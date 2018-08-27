@@ -16,15 +16,13 @@
             <router-link style="color: #2AB8CC" :to="{name: 'MovieView'}">小组</router-link>
           </li>
         </ul>
-        <router-link class="head-bar-search" :to="{name: 'SearchView'}"></router-link>
+        <span class="head-bar-search" @click='$emit("choose")'></span>
       </div>
     </div>
 </template>
 
 <script>
-
 export default {
-
 }
 </script>
 

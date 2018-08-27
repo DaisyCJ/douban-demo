@@ -4,16 +4,16 @@
       <span>{{ title }}</span>
       <a href="">更多</a>
     </div>
-    <ul>
+    <ul class="list-content">
       <li
         v-for='item in items'
         :key='item.id'>
         <router-link :to="{ name: 'SubjectView', params: {id: item.id}}">
           <img :src="item.images.small" class="list-img">
           <p class='movie-list-title'>{{ changeTitle(item.title) }}</p>
-          <div>
+          <div class="movie-rating">
             <rating-star :rating='item.rating.average'></rating-star>
-            <span>{{ Number(item.rating.average).toFixed(1) }}</span>
+            <span v-if="item.rating.average!=0">{{ Number(item.rating.average).toFixed(1) }}</span>
           </div>
         </router-link>
       </li>
@@ -56,7 +56,7 @@ export default {
       color: #00b600;
     }
   }
-  ul {
+  .list-content {
     display: -webkit-box;
     display: -ms-flexbox;
     overflow: auto;
@@ -72,8 +72,13 @@ export default {
         text-align: center;
       }
       span {
+        padding-left: 5px;
         font-size: 12px;
+        color: #aaaaaa;
       }
+    }
+    .movie-rating {
+      padding: 0 3px;
     }
     .rating-star {
       float: left;

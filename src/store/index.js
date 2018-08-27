@@ -7,6 +7,7 @@ import color from './modules/color'
 import category from './modules/category'
 import comments from './modules/comments'
 import movieDetail from './modules/movieDetail'
+import search from './modules/search'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     movie,
     category,
     comments,
-    movieDetail
+    movieDetail,
+    search
   }
 })

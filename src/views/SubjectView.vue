@@ -34,13 +34,15 @@
     </section>
     <section class="subject-people">
       <div class="section-title">
-        <p>影人</p>
+        <span>影人</span>
+        <span class="more">全部 ></span>
       </div>
       <cast-list :items="people"></cast-list>
     </section>
     <section class="subject-pic">
       <div class="section-title">
-        <p>预告片 / 视频评论 / 剧照</p>
+        <span>预告片 / 视频评论 / 剧照</span>
+        <span class="more">全部 ></span>
       </div>
       <ul>
         <li>

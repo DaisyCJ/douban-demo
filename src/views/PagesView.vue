@@ -1,22 +1,43 @@
 <template>
   <div class="pages-view">
-    <head-bar></head-bar>
-    <router-view></router-view>
+    <div v-if="!comeSearch">
+      <head-bar @choose="openSearch"></head-bar>
+      <router-view class="page-content"></router-view>
+    </div>
+    <div v-if="comeSearch" class="pages-view">
+      <search @close="closeSearch"></search>
+    </div>
   </div>
 </template>
 
 <script>
 import HeadBar from '../components/HeadBar'
+import Search from '../components/Search'
 
 export default {
   components: {
-    HeadBar
+    HeadBar, Search
+  },
+  data () {
+    return {
+      comeSearch: false
+    }
+  },
+  methods: {
+    openSearch: function() {
+      this.comeSearch = true
+    },
+    closeSearch: function() {
+      this.comeSearch = false
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .pages-view {
-  padding: 10px 0;
+  .page-content {
+    margin-top: 60px;
+  }
 }
 </style>

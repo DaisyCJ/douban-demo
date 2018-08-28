@@ -51,7 +51,7 @@ const mutations = {
 
 const actions = {
   getMovieMsg({commit}, id) {
-    Vue.http.jsonp('http://api.douban.com/v2/movie/' + id, { credentials: true})
+    Vue.http.jsonp('https://api.douban.com/v2/movie/' + id, { credentials: true})
       .then((response) =>{
         commit('tagMsg', response.body)
       }, function(error) {

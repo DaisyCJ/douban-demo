@@ -81,33 +81,5 @@ export default {
       float: left;
     }
   }
-  // .list-content {
-  //   display: -webkit-box;
-  //   display: -ms-flexbox;
-  //   overflow: auto;
-  //   margin: 15px 0;
-  //   li {
-  //     width: 105px;
-  //     .list-img {
-  //       width: 100px;
-  //       height: 140px;
-  //     }
-  //     .movie-list-title {
-  //       font-size: 15px;
-  //       text-align: center;
-  //     }
-  //     span {
-  //       padding-left: 5px;
-  //       font-size: 12px;
-  //       color: #aaaaaa;
-  //     }
-  //   }
-  //   .movie-rating {
-  //     padding: 0 3px;
-  //   }
-  //   .rating-star {
-  //     float: left;
-  //   }
-  // }
 }
 </style>

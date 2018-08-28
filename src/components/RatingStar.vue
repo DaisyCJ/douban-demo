@@ -7,10 +7,8 @@
         <li class="normal-star" :class="lightStar()"></li>
         <li class="normal-star" :class="lightStar()"></li>
         <li class="normal-star" :class="lightStar()"></li> -->
-        <li v-for="n in lightStar"
-          class="normal-star light-star"></li>
-        <li v-for="n in grayStar"
-          class="normal-star"></li>
+        <li v-for="n in lightStar" class="normal-star light-star"></li>
+        <li v-for="n in grayStar" class="normal-star"></li>
       </ul>
     </div>
     <span v-else class="no-rating">暂无评分</span>

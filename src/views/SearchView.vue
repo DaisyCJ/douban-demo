@@ -9,10 +9,12 @@
       <p class="title">影视</p>
       <ul>
         <li v-for="(item, index) in answer.subjects.slice(0, num)" :key="index" class="clearfix">
-          <img :src="item.images.small" alt="error">
-          <p>{{ item.title }}</p>
-          <rating-star :rating="item.rating.average"></rating-star>
-          <span>{{ Number(item.rating.average).toFixed(1) }}</span>
+          <router-link :to="{ name: 'SubjectView', params: {id: item.id}}">
+            <img :src="item.images.small" alt="error">
+            <p>{{ item.title }}</p>
+            <rating-star :rating="item.rating.average"></rating-star>
+            <span>{{ Number(item.rating.average).toFixed(1) }}</span>
+          </router-link>
         </li>
       </ul>
       <p class="load-more" @click="loadMore" v-if="num!=answer.subjects.length">更多影视结果……</p>
@@ -40,7 +42,7 @@ export default {
       answer: state => state.search.answer
     })
   },
-  created () {
+  created () {    
     this.text = this.$route.query.query,
     this.$store.dispatch('getAnswer', this.text)
   },
@@ -52,7 +54,8 @@ export default {
       else this.num = this.answer.subjects.length
     },
     searchStart: function() {
-      this.$router.push({ path: '/search', query: { query: this.text }})
+      this.$router.push({ path: '/search', query: { query: this.text }}),
+      location.reload()
     }
   }
 }

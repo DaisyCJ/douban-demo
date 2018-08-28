@@ -8,6 +8,7 @@ import category from './modules/category'
 import comments from './modules/comments'
 import movieDetail from './modules/movieDetail'
 import search from './modules/search'
+import homeList from './modules/homeList'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     category,
     comments,
     movieDetail,
-    search
+    search,
+    homeList
   }
 })

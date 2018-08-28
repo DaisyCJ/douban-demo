@@ -57,7 +57,7 @@ const actions = {
       }, function(error) {
         console.log('error')
     });
-    Vue.http.jsonp('http://api.douban.com/v2/movie/subject/' + id, { credentials: true})
+    Vue.http.jsonp('https://api.douban.com/v2/movie/subject/' + id, { credentials: true})
       .then((response) =>{
         if(response.body.casts != undefined) {
           commit('movieMsg', response.body)

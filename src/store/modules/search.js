@@ -87,8 +87,7 @@ const actions = {
   getAnswer(context, text) {
     Vue.http.jsonp('https://api.douban.com/v2/movie/search?q='+text, { credentials: true})
     .then((response) => {
-      context.commit('getAnswer', response.body),
-      console.log(response.body.subjects)
+      context.commit('getAnswer', response.body)
     }, function(error) {
       console.log('error')
     })

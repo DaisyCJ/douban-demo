@@ -1,7 +1,7 @@
 <template>
   <div class="subject-view" v-if="item!=undefined">
     <header class="subject-head clearfix">
-      <img v-if="item.images!=undefined" :src="item.images.small" alt="error">
+      <img v-if="item.images" :src="item.images.large" alt="error">
       <div class="subject-head-content">
         <h1>{{ item.title }}</h1>
         <div class="subject-head-rating" v-if="item.rating!=undefined">

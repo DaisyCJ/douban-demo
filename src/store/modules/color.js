@@ -5,7 +5,7 @@ const state = {
   color: ['#42bd56', '#ffac2d', '#ff4055', '#cc3344', '#4f9ded'],
   recommandTags: [{
     tag: '同时入选IMDB250和豆瓣电影250的电影',
-    url: 'http://api.douban.com/v2/movie/top250',
+    url: 'https://m.douban.com/doulist/968362/',
     color: '#000',
     id: 0
   }, {

@@ -8,7 +8,7 @@
           <p>导演</p>
         </a>
       </li>
-      <li v-for='item in items.casts'>
+      <li v-for='(item,index) in items.casts' :key="index">
         <a :href="item.alt">
           <img :src="item.avatars.small" class="list-img">
           <p class='cast-name'>{{ item.name }}</p>

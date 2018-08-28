@@ -18,7 +18,7 @@
       </ul>
       <!-- <span @click="loadMoreMovie">加载更多</span> -->
       <div v-infinite-scroll="onInfinite" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-        <img src="../assets/loading.gif" alt="loading">
+        <img src="../assets/loading.gif" alt="loading" class="load-pic">
       </div>
     </div>
   </div>
@@ -78,26 +78,31 @@ export default {
     margin-top: 25px;
     font-size: 20px;
   }
-    .list-item {
-      padding: 20px 0;
-      border-bottom: 1px solid #f3f3f3;
-      img {
-        width: 80px;
-        float: left;
-        margin-right: 10px;
-      }
-      .item-title {
-        font-size: 18px;
-      }
-      .rating-star {
-        padding: 0;
-        float: left;
-      }
-      span {
-        padding-left: 10px;
-        font-size: 12px;
-        color: #aaaaaa;
-      }
+  .list-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f3f3f3;
+    img {
+      width: 80px;
+      float: left;
+      margin-right: 10px;
+    }
+    .item-title {
+      font-size: 18px;
+    }
+    .rating-star {
+      padding: 0;
+      float: left;
+    }
+    span {
+      padding-left: 10px;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+  }
+  .load-pic {
+    margin: 0 auto;
+    display: block;
+    width: 50px;
   }
 }
 </style>

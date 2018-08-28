@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .pages-view {
   .page-content {
-    margin-top: 60px;
+    margin-top: 70px;
   }
 }
 </style>
